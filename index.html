@@ -717,7 +717,7 @@ body {
       phone2: phone2.value.trim() ? "'+998 " + phone2.value.trim() : '',
       course: COURSE_LABELS[course.value] || course.value,
       filial: FILIAL_LABELS[filial.value] || filial.value,
-      source: 'GitHub forma'
+      source: new URLSearchParams(window.location.search).get('utm_source') || 'GitHub forma'
     };
 
     fetch(WEBHOOK_URL, {
